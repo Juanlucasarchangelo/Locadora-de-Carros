@@ -35,7 +35,7 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "Chegamos ate aqui! (Store)";
     }
 
     /**
