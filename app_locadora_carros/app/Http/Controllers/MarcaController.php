@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Marca;
+use GuzzleHttp\RetryMiddleware;
 use Illuminate\Http\Request;
 
 class MarcaController extends Controller
@@ -14,7 +15,8 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        //
+        $marca = Marca::all();
+        return  $marca;
     }
 
     /**
@@ -35,7 +37,8 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        echo "Chegamos ate aqui! (Store)";
+        $marca = Marca::create ($request->all());
+        return $marca;
     }
 
     /**
@@ -46,7 +49,8 @@ class MarcaController extends Controller
      */
     public function show(Marca $marca)
     {
-        //
+        // $marca = Marca::find($marca); Eu achei que era nescessário
+        echo $marca;
     }
 
     /**
